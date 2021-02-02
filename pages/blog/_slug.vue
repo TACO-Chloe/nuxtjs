@@ -1,10 +1,10 @@
 <template>
   <article>
     <nuxt-content :document="article" />
-  </article>
     <pre> {{ article }} </pre>
     <p>Post last updated: {{ article.updatedAt }}</p>
     <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+  </article>
 </template>
 
 
