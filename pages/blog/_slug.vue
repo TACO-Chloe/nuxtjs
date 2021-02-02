@@ -4,6 +4,8 @@
     <p>{{ article.description }}</p>
     <img :src="article.img" :alt="article.alt" />
     <p>0309</p>
+    <pre> {{ article }} </pre>
+    <p>Post last updated: {{ article.updatedAt }}</p>
     <nuxt-content :document="article" />
   </article>
 </template>
