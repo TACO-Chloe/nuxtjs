@@ -6,6 +6,8 @@
     <p>0309</p>
     <pre> {{ article }} </pre>
     <p>Post last updated: {{ article.updatedAt }}</p>
+    <p>Article last updated: {{ formatDate(article.updatedAt) }}</p>
+    <br>
     <nuxt-content :document="article" />
   </article>
 </template>
@@ -20,6 +22,12 @@
       const article = await $content('articles', params.slug).fetch()
 
       return { article }
+    },
+    methods: {
+      formatDate(date) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' }
+        return new Date(date).toLocaleDateString('en', options)
+      }
     }
   }
 </script>
